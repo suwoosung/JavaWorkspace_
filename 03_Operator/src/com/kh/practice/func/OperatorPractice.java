@@ -130,8 +130,8 @@ public class OperatorPractice {
 		int num3 = sc.nextInt();
 		
 		double n1 = num1+(double)(num1*0.4);
-		double n2 = (double)(num1);
-		double n3 = (num1+(double)(num1*0.15));
+		double n2 = (double)(num2);
+		double n3 = (num3+(double)(num3*0.15));
 		
 		String b1=n1>=3000 ? "3000 이상" : "3000 미만";
 		String b2=n2>=3000 ? "3000 이상" : "3000 미만";
