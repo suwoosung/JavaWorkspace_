@@ -117,7 +117,7 @@ public class OperatorPractice {
 
 		System.out.println(b);
 	}
-
+	//ㅋㅋ 
 	public void practice8() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("A사원의 연봉 : ");
