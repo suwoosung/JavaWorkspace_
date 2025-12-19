@@ -68,14 +68,14 @@ public class OperatorPractice {
 
 		int sum = num1 + num2 + num3;
 		double avg = sum / 3.0;
-
+		
 		System.out.println("합계 : " + sum);
 		System.out.println("평균 : " + avg);
 		String result = num1 >= 40 && num2 >= 40 && num3 >= 40 && avg >= 60 ? "합격" : "불합격";
 
 		System.out.println(result);
 	}
-
+	
 	public void practice5() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("주민번호를 입력하세요(- 포함) : ");
@@ -101,7 +101,7 @@ public class OperatorPractice {
 
 		System.out.println(b);
 	}
-
+	
 	public void practice7() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("입력1 : ");
@@ -117,7 +117,7 @@ public class OperatorPractice {
 
 		System.out.println(b);
 	}
-	//ㅋㅋ 
+	
 	public void practice8() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("A사원의 연봉 : ");
@@ -137,11 +137,11 @@ public class OperatorPractice {
 		String b2=n2>=3000 ? "3000 이상" : "3000 미만";
 		String b3=n3>=3000 ? "3000 이상" : "3000 미만";
 			
-		System.out.println("A사원의 연봉/연봉+a : "+"num1/n1");
+		System.out.println("A사원의 연봉/연봉+a : "+num1+"/"+n1);
 		System.out.println(b1);
-		System.out.println("B사원의 연봉/연봉+a : "+"num2/n2");
+		System.out.println("B사원의 연봉/연봉+a : "+num2+"/"+n2);
 		System.out.println(b2);
-		System.out.println("B사원의 연봉/연봉+a : "+"num3/n3");
+		System.out.println("B사원의 연봉/연봉+a : "+num3+"/"+n3);
 		System.out.println(b3);
 	}
 }
