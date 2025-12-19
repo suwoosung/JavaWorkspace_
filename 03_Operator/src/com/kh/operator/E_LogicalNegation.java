@@ -2,14 +2,14 @@ package com.kh.operator;
 
 public class E_LogicalNegation {
 	/*
-	 * ³í¸®ºÎÁ¤¿¬»êÀÚ !(´ÜÇ×¿¬»êÀÚ)
-	 * 
-	 * !³í¸®°ª
-	 * -³í¸®°ªÀ» ¹Ý´ë·Î ¹Ù²ãÁÖ´Â ¿¬»êÀÚ
+	 * ë…¼ë¦¬ë¶€ì •ì—°ì‚°ìž !(ë‹¨í•­ì—°ì‚°ìž)
+	 * ã…‹ã…‹ã…‹
+	 * !ë…¼ë¦¬ê°’
+	 * -ë…¼ë¦¬ê°’ì„ ë°˜ëŒ€ë¡œ ë°”ê¿”ì£¼ëŠ” ì—°ì‚°ìž
 	 */
 	
 	public void method() {
-		System.out.println("trueÀÇ ºÎÁ¤"+!true);
+		System.out.println("trueì˜ ë¶€ì •"+!true);
 		
 		boolean b = true;
 		boolean b2 = !b;
@@ -17,3 +17,4 @@ public class E_LogicalNegation {
 		boolean b3 = !(5 > 3);
 	}
 }
+
