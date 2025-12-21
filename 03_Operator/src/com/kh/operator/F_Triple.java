@@ -3,7 +3,6 @@ package com.kh.operator;
 public class F_Triple {
 	
 	/*
-	 * ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
 	 * 삼항연산자
 	 * -3개의 항목을 가지고 연산하는 연산자
 	 * [표현법]
