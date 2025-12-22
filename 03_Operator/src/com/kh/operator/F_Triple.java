@@ -3,7 +3,6 @@ package com.kh.operator;
 public class F_Triple {
 	
 	/*
-	 * ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
 	 * 삼항연산자
 	 * -3개의 항목을 가지고 연산하는 연산자
 	 * [표현법]
@@ -28,13 +27,14 @@ public class F_Triple {
 	public void quiz() {
         int a = 5;
         int b = 10;
-        int c = (++a) + b; // 6+9=15
-        int d = c / a; // 15/6=2
-        int e = c % a; // 15%6=3
-        int f = e++; // 3(4)
-        int g = (--b) +(d--); // 9+2(1)=11
+        int c = (++a) + b; //  a=6 , b=10, c=16
+        int d = c / a; // c=16, a=6, d=2
+        int e = c % a; // c=16, a=6, e=4
+        int f = e++; // e=4(5), f=4
+        int g = (--b) +(d--); // b=9, d=2(1), g=11
         int h = 2; 
-        int i = (a++) + b / (--c / f) * (g-- - d) % (++e + h); 
+        int i = (a++) + b / (--c / f) * (g-- - d) % (++e + h); // a=6(7), b=9, c=15, d=1, e=6, f=4, g=11(10)
+        //h=2, i=6+ (9/3)*10%8=6+ 30%8=12
         System.out.println("a : "+a); // a: 7
         System.out.println("b : "+b); // b: 9
         System.out.println("c : "+c); // c: 15
