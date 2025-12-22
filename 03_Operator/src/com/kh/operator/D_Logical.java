@@ -3,62 +3,67 @@ package com.kh.operator;
 import java.util.Scanner;
 
 public class D_Logical {
-	
-	/*
-	 * ³í¸® ¿¬»êÀÚ
-	 * - ³í¸® °ª µÎ°³¸¦ ºñ±³ÇÏ´Â ¿¬»êÀÚ
+	/* 
+	 * ë…¼ë¦¬ ì—°ì‚°ì 
+	 *  - ë…¼ë¦¬ ê°’ ë‘ê°œë¥¼ ë¹„êµí•˜ëŠ” ì—°ì‚°ì
 	 * 
-	 * AND && : a && b -> a¿Í b°¡ ¸ğµÎ ÂüÀÏ °æ¿ì true¹İÈ¯.
-	 * 					  a¿Í b µÑ Áß ÇÏ³ª¶óµµ °ÅÁşÀÏ °æ¿ì false
-	 * 
-	 * OR || : a || b -> a¿Í b°¡ µÑ Áß ÇÏ³ª°¡ ÂüÀÏ °æ¿ì true,
-	 * 					 a¿Í b µÑ ´Ù °ÅÁşÀÏ °æ¿ì false¹İÈ¯.
-	 * 
-	 * ~ÇÏ¸é¼­ => AND
-	 * ¶Ç´Â => OR
-	 * 
-	 */
-	
+	 * AND && : a && b -> aì™€ bê°€ ëª¨ë‘ ì°¸ì¼ ê²½ìš° trueë°˜í™˜.
+	 *                    aì™€ b ë‘˜ ì¤‘ í•˜ë‚˜ë¼ê³  ê±°ì§“ì¼ ê²½ìš° false.
+	 *                    
+	 * OR  || : a || b -> aì™€ bë‘˜ ì¤‘ í•˜ë‚˜ë¼ë„ ì°¸ì¼ê²½ìš° true, 
+	 *                    aì™€ b ë‘˜ ë‹¤ ê±°ì§“ì¸ ê²½ìš° falseë°˜í™˜.
+	 * ~í•˜ë©´ì„œ => AND
+	 * ë˜ëŠ” => OR                   
+	 *                    
+	 * */
 	Scanner sc = new Scanner(System.in);
-	
 	public void method1() {
-		System.out.println("¼ıÀÚ¸¦ ÇÏ³ª ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.print("ìˆ«ìë¥¼ í•˜ë‚˜ ì…ë ¥í•˜ì„¸ìš”.");
 		int num = sc.nextInt();
 		
-		// numÀÇ °ªÀÌ 0º¸´Ù Å©¸é¼­ Â¦¼öÀÔ´Ï±î?
+		// numì˜ ê°’ì´ 0ë³´ë‹¤ í¬ë©´ì„œ ì§ìˆ˜ì…ë‹ˆê¹Œ?
 		boolean result = (num > 0) && (num % 2 == 0);
 	}
 	
 	public void method2() {
-		// ÀÔ·ÂÇÑ °ªÀÌ 1 ÀÌ»ó 100ÀÌÇÏÀÇ ¼ıÀÚÀÎÁö È®ÀÎ.
-		// 1 <= X <= 100
-		System.out.println("Á¤¼ö : ");
+		// ì…ë ¥í•œ ê°’ì´ 1 ì´ìƒ 100 ì´í•˜ì˜ ìˆ«ìì¸ì§€ í™•ì¸.
+		// 1 <= x <= 100
+		System.out.print("ì •ìˆ˜ : ");
 		int num = sc.nextInt();
 		
-		// 1 <= X <= 100À» ÀÚ¹Ù½ÄÀ¸·Î º¯È¯
-		// (1 <= X) && (X <= 100)
-		boolean redult = 1<= num && num <= 100;
+		// 1 <= x <= 100ì„ ìë°”ì‹ìœ¼ë¡œ ë³€í™˜
+		// (1 <= x) && (x <= 100)
+		boolean result = 1 <= num && num <= 100;
 	}
 	
 	public void method3() {
-		//»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °ªÀÌ 'Y'°Å³ª 'y'ÀÎ °æ¿ì Âü, ¾Æ´Ï¸é °ÅÁşÀ» ¹İÈ¯ÇÏ½Ã¿À.
-		System.out.println("°è¼Ó ÁøÇàÇÏ½Ã·Á¸é y¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		// ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê°’ì´ 'y'ê±°ë‚˜ 'Y'ì¸ ê²½ìš° ì°¸, ì•„ë‹ˆë©´ ê±°ì§“ì„ ë°˜í™˜í•˜ì‹œì˜¤.
+		System.out.print("ê³„ì† ì§„í–‰í•˜ì‹œë ¤ë©´ yë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 		char ch = sc.next().charAt(0);
 		
-		boolean result = (ch == 'y') || (ch == 'Y');
+		boolean result = ch == 'y' || ch == 'Y';
 	}
 	
 	public void method4() {
 		int num1 = 10;
 		
-		// and¿¬»êÀÚÀÇ °æ¿ì A && BÀÇ Á¶°Ç Áß AÀÇ °ªÀÌ falseÀÎ °æ¿ì
-		// µÚ ÂÊ Á¶°ÇµéÀÌ ¹¹µç ¹«Á¶°Ç falseÀÌ±â ¶§¹®¿¡ µÚÂÊ Á¶°Ç½ÄÀº ½ÇÇàÇÏÁö ¾Ê´Â´Ù.
-		boolean result1 = (num1 < 5) && (num1++ > 0); // false
-		System.out.println("result : " + result1);
-		System.out.println(num1); // 10
+		// andì—°ì‚°ìì˜ ê²½ìš° A && Bì˜ ì¡°ê±´ ì¤‘ Aì˜ ê°’ì´ falseì¸ ê²½ìš°
+		// ë’¤ ìª½ ì¡°ê±´ë“¤ì´ ë­ë“  ë¬´ì¡°ê±´ falseì´ê¸° ë•Œë¬¸ì— ë’¤ìª½ ì¡°ê±´ì‹ì€ ì‹¤í–‰í•˜ì§€
+		// ì•ŠëŠ”ë‹¤.
+		boolean result1 = (num1 < 5) && (num1++ > 0);
+		System.out.println("result1 : " + result1);
+		System.out.println(num1);// 11
 		
 		int num2 = 10;
 		boolean result2 = num2 < 20 || ++num2 > 0; // true
-		System.out.println(num2); // 10
+		System.out.println(num2);// 10
 	}
+	
+	
+	
 }
+
+
+
+
+

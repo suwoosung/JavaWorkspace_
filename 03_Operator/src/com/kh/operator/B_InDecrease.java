@@ -2,60 +2,72 @@ package com.kh.operator;
 
 public class B_InDecrease {
 	/*
-	 * Áõ°¨¿¬»êÀÚ(´ÜÇ×¿¬»êÀÚ) ++ -- ++ : º¯¼ö¿¡ ´ã±ä °ªÀ» 1Áõ°¡ ++º¯¼ö(ÀüÀ§¿¬»êÀÚ) º¯¼ö++(ÈÄÀ§¿¬»êÀÚ)
+	 * ì¦ê°ì—°ì‚°ì(ë‹¨í•­ì—°ì‚°ì) ++ -- ++ : ë³€ìˆ˜ì— ë‹´ê¸´ ê°’ì„ 1 ì¦ê°€ ++ë³€ìˆ˜(ì „ìœ„ì—°ì‚°ì) ë³€ìˆ˜++(í›„ìœ„ì—°ì‚°ì)
 	 * 
-	 * -- : º¯¼ö¿¡ ´ã±ä °ªÀ» 1 °¨¼Ò
+	 * -- : ë³€ìˆ˜ì— ë‹´ê¸´ ê°’ì„ 1 ê°ì†Œ
 	 * 
-	 * (Áõ°¨¿¬»êÀÚ)º¯¼ö : ÀüÀ§¿¬»ê -> ¼±Áõ°¨ ÈÄÃ³¸® º¯¼ö(Áõ°¨¿¬»êÀÚ) : ÈÄÀ§¿¬»ê -> ¼±Ã³¸® ÈÄÁõ°¨
+	 * (ì¦ê°ì—°ì‚°ì)ë³€ìˆ˜ : ì „ìœ„ì—°ì‚° -> ì„ ì¦ê° í›„ì²˜ë¦¬ ë³€ìˆ˜(ì¦ê°ì—°ì‚°ì) : í›„ìœ„ì—°ì‚° -> ì„ ì²˜ë¦¬ í›„ì¦ê°
 	 */
-
 	public void method1() {
 		int num = 10;
-		System.out.println("ÀüÀ§¿¬»ê Àû¿ë Àü num : " + num); // 10
-		System.out.println("1È¸ ¼öÇà : " + ++num); // 11
-		System.out.println("2È¸ ¼öÇà : " + ++num); // 12
-		System.out.println("3È¸ ¼öÇà : " + ++num); // 13
-		System.out.println("ÃÖÁ¾ num : " + num); // 13
+		System.out.println("ì „ìœ„ì—°ì‚° ì ìš© ì „ num : " + num);// 10
+		System.out.println("1íšŒ ìˆ˜í–‰ : " + ++num);// 11
+		System.out.println("2íšŒ ìˆ˜í–‰ : " + ++num);// 12
+		System.out.println("3íšŒ ìˆ˜í–‰ : " + ++num);// 13
+		System.out.println("ìµœì¢… num : " + num); // 13
 
 		int num2 = 10;
-		System.out.println("ÈÄÀ§¿¬»ê Àü num2 : " + num2); // 10
-		System.out.println("1È¸ ¼öÇà : " + num2++); // 10(11)
-		System.out.println("1È¸ ¼öÇà : " + num2++); // 11(12)
-		System.out.println("1È¸ ¼öÇà : " + num2++); // 12(13)
-		System.out.println("ÃÖÁ¾ num2 : " + num2); // 13
+		System.out.println("í›„ìœ„ì—°ì‚° ì „ num2 : " + num2);// 10
+		System.out.println("1íšŒ ìˆ˜í–‰ : " + num2++);// 10(11)
+		System.out.println("2íšŒ ìˆ˜í–‰ : " + num2++);// 11(12)
+		System.out.println("3íšŒ ìˆ˜í–‰ : " + num2++);// 12(13)
+		System.out.println("ìµœì¢… num2 : " + num2);// 13
 	}
 
 	public void method2() {
-		// ÀüÀ§¿¬»ê
+		// ì „ìœ„ì—°ì‚°
 		int a = 10;
 		int b = ++a;
-		System.out.println("a : " + a); // 11
-		System.out.println("b : " + b); // 11
+		System.out.println("a : " + a);// 10(x) 11
+		System.out.println("b : " + b);// 11
 
-		// ÈÄÀ§¿¬»ê
+		// í›„ìœ„ì—°ì‚°
 		int c = 10;
 		int d = c++;
-		System.out.println("c : " + c); // 11
-		System.out.println("d : " + d); // 10
+		System.out.println("c : " + c);// 11
+		System.out.println("d : " + d);// 10
+
+		// ì˜ˆì¸¡í•´ë³´ê¸°
+		int num = 20;
+		System.out.println("í˜„ì¬ num : " + num);// 20
+		System.out.println("++num? : " + ++num);// 21
+		System.out.println("num++? : " + num++);// 21(22)
+		System.out.println("--num? : " + --num);// 21 
+		System.out.println("num--? : " + num--);// 21(20)
+
+		System.out.println("ìµœì¢… num? : " + num);// 20
 	}
-	
+
 	public void method3() {
 		int num1 = 20;
-		int result1 = num1++ * 3;
+		int result1 = ++num1 * 3;
 		
-		System.out.println(num1); // 21
-		System.out.println(num1); // 60
+		System.out.println(num1);//21
+		System.out.println(result1);// 63
 	}
 	
+	
 	public void method4(){
-        int a = 10;
-        int b =20;
-        int c = 30;
-        
-        //ÁÖ¼®À¸·Î ¾î¶»°Ô Ãâ·ÂµÉ°Å°°ÀºÁö »ı°¢ÇÏ±â
-        System.out.println(a++); // 10
-        System.out.println((++a) + (b++)); // 12+20=32
-        System.out.println((a++)+(--b)+(--c)); // 12+20+29=61
-        System.out.printf("a: %d , b: %d, c: %d",a,b,c ); // a: 13, b: 20, c: 29
-    }
+		int a = 10;
+		int b =20;
+		int c = 30;
+
+		//ì£¼ì„ìœ¼ë¡œ ì–´ë–»ê²Œ ì¶œë ¥ë ê±°ê°™ì€ì§€ ìƒê°í•˜ê¸°
+		System.out.println(a++); // 10(11)
+		System.out.println((++a) + (b++)); // a:12 , b: 20(21) = 32
+		System.out.println((a++)+(--b)+(--c)); // a : 12(13) b: 20 c: 29 = 61
+		System.out.printf("a: %d , b: %d, c: %d",a,b,c	);
+	}
+	
+	
 }
