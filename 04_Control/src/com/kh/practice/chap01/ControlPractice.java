@@ -324,4 +324,25 @@ public class ControlPractice {
 			System.out.println("없는 기능입니다.");
 		}
 	}
+	
+	public void practice11() {
+		System.out.print("비밀번호 입력(1000~9999)) : ");
+		int input = sc.nextInt();
+		
+		if (input<1000 || input>9999) {
+			System.out.println("자리 수 안 맞음");
+			return;
+		}
+		
+		int th = input/1000;
+		int hu = input/100%10;
+		int mi = input/10%10;
+		int nu = input%10;
+		
+		if(th==hu || th==mi || th==nu || hu==mi || hu==nu || mi==nu){
+			System.out.println("중복 값 있음");
+		} else {
+			System.out.println("생성 성공");
+		}
+	}
 }

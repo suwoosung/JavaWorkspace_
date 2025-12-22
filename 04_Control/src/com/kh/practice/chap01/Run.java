@@ -5,6 +5,6 @@ public class Run {
 	public static void main(String[] args) {
 
 		ControlPractice co = new ControlPractice();
-		co.practice10();
+		co.practice11();
 	}
 }
