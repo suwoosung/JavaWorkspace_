@@ -324,4 +324,11 @@ public class ControlPractice {
 			System.out.println("없는 기능입니다.");
 		}
 	}
+	
+	public void method11() {
+		System.out.println("비밀번호 입력(1000~9999) : ");
+		int password = sc.nextInt();
+		
+
+	}
 }
