@@ -116,12 +116,12 @@ public class ControlPractice {
 		case 11:
 			season = "가을";
 			break;
-		default :
+		default:
 			season = "해당하는 계절이 없습니다.";
-			System.out.println(month+"월은 잘못 입력괸 달입니다.");
+			System.out.println(month + "월은 잘못 입력괸 달입니다.");
 		}
 
-		System.out.println(month+"월은 "+season+"입니다.");
+		System.out.println(month + "월은 " + season + "입니다.");
 	}
 
 	public void practice5() {
@@ -140,23 +140,23 @@ public class ControlPractice {
 //		} else {
 //			System.out.println("아이디와 비밀번호 둘다 틀렸습니다.");
 //		}
-		
+
 		if (id.equals("minmin") && password.equals("Minmin1234")) {
 			System.out.println("로그인 성공");
 			return;
 		}
-		
+
 		if (!(id.equals("minmin"))) {
 			System.out.println("아이디가 틀렸습니다.");
 			return;
 		}
-		
+
 		if (!(password.equals("Minmin1234"))) {
 			System.out.println("비밀번호가 틀렸습니다.");
 			return;
 		}
 	}
-		
+
 	public void practice6() {
 		System.out.print("권한을 확인하고자 하는 회원 등급 : ");
 		String revel = sc.next();
@@ -270,13 +270,13 @@ public class ControlPractice {
 			System.out.println("Pass");
 		} else
 			System.out.println("Fail");
-		
+
 		if (!(ps > 20 * 0.3)) {
-			System.out.println("Fail [출석 회수 부족("+ps+"/20)");
+			System.out.println("Fail [출석 회수 부족(" + ps + "/20)");
 			return;
 		}
 	}
-	
+
 	public void practice10() {
 		System.out.println("실행할 기능을 선택하세요.");
 		System.out.println("1. 메뉴 출력");
@@ -288,47 +288,40 @@ public class ControlPractice {
 		System.out.println("7. BMI");
 		System.out.println("8. 계산기");
 		System.out.println("9. P/F");
-		
+
 		System.out.print("선택 : ");
 		int num = sc.nextInt();
-		
-		switch(num) {
-		case(1) :
-			System.out.println("1. 메뉴 출력");
+
+		switch (num) {
+		case (1):
+			practice1();
 			break;
-		case(2) :
-			System.out.println("2. 짝수/홀수");
+		case (2):
+			practice2();
 			break;
-		case(3) :
-			System.out.println("3. 합격/불합격");
+		case (3):
+			practice3();
 			break;
-		case(4) :
-			System.out.println("4. 계절");
+		case (4):
+			practice4();
 			break;
-		case(5) :
-			System.out.println("5. 로그인");
+		case (5):
+			practice5();
 			break;
-		case(6) :
-			System.out.println("6. 권한 확인");
+		case (6):
+			practice6();
 			break;
-		case(7) :
-			System.out.println("7. BMI");
+		case (7):
+			practice7();
 			break;
-		case(8) :
-			System.out.println("8. 계산기");
+		case (8):
+			practice8();
 			break;
-		case(9) :
-			System.out.println("9. P/F");
+		case (9):
+			practice9();
 			break;
-		default :
+		default:
 			System.out.println("없는 기능입니다.");
 		}
-	}
-	
-	public void method11() {
-		System.out.println("비밀번호 입력(1000~9999) : ");
-		int password = sc.nextInt();
-		
-
 	}
 }
