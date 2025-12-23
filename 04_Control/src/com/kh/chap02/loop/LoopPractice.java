@@ -128,71 +128,96 @@ public class LoopPractice {
 			num1 += num2;
 		}
 	}
-	
+
 	public void practice7() {
 
 		System.out.print("연산자(+, -, *, /, %) : ");
 		String s = sc.next();
-		
+
 		// exit가 맞는지 검사
 		char ch = s.charAt(0);
-		
+
+		if (s.equals("exit")) {
+			System.out.println("프로그램을 종료합니다");
+			return;
+		}
+
 		System.out.print("정수1 : ");
 		int num1 = sc.nextInt();
 
 		System.out.print("정수2 : ");
 		int num2 = sc.nextInt();
-		
-		System.out.println(num1+" "+ch+" "+num2+" = "+num1+ch+num2);
-		
-		if (s.equals("exit")) {
-			System.out.println("프로그램을 종료합니다");
-			return;
-		}  
-			
-		if(ch == '/' && num2 == 0) {
+
+		if (ch == '/' && num2 == 0) {
 			System.out.println("0으로 나눌 수 없습니다. 다시 입력해주세요.");
 			practice7();
 			return;
-			
-		} else if(ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%') {
+
+		} else if (!(ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%')) {
 			System.out.println("없는 연산자입니다. 다시 입력해주세요.");
 			practice7();
 			return;
 		}
-		
+
+		switch (ch) {
+		case '+':
+			System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
+			break;
+		case '-':
+			System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
+			break;
+		case '*':
+			System.out.println(num1 + " * " + num2 + " = " + (num1 * num2));
+			break;
+		case '/':
+			System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
+			break;
+		case '%':
+			System.out.println(num1 + " % " + num2 + " = " + (num1 % num2));
+			break;
+		}
+
 	}
-	
 
 	public void practice8() {
 
 		System.out.print("정수 입력 : ");
 		int num = sc.nextInt();
-		
-		for (int i=0; i<num; i++) {
-			for (int j=0; j<=i; j++) {
+
+		for (int i = 0; i < num; i++) {
+			for (int j = 0; j <= i; j++) {
 				System.out.print("*");
 			}
 			System.out.println();
 		}
 	}
-	
+
 	public void practice9() {
 
 		System.out.print("정수 입력 : ");
 		int num = sc.nextInt();
-		
-		for (int i=num; i>0; i--) {
-			for (int j=i; j>0 && j<=num; j--) {
+
+		for (int i = num; i > 0; i--) {
+			for (int j = i; j > 0 && j <= num; j--) {
 				System.out.print("*");
 			}
 			System.out.println();
 		}
 	}
-	
+
 	public void practice10() {
 
 		System.out.print("숫자 : ");
 		int num = sc.nextInt();
+
+		if (num % 1 == 0 || num % num == 0) {
+			System.out.println("소수입니다.");
+			return;
+		} else if (num < 2) {
+			System.out.println("잘못 입력하셨습니다.");
+			return;
+		} else {
+			System.out.println("소수가 아닙니다. 잘못 입력하셨습니다.");
+		}
 	}
 }
