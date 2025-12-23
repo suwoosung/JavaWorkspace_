@@ -161,18 +161,27 @@ public class ControlPractice {
 		System.out.print("권한을 확인하고자 하는 회원 등급 : ");
 		String revel = sc.next();
 
+//		switch (revel) {
+//		case "관리자":
+//			System.out.println("회원관리, 게시글 관리, 게시글 작성, 댓글 작성 게시글 조회");
+//			break;
+//		case "회원":
+//			System.out.println("게시글 작성, 게시글 조회, 댓글 작성");
+//			break;
+//		case "비회원":
+//			System.out.println("게시글 조회");
+//			break;
+//		default:
+//			System.out.println("다시입력하세요.");
+//		}
+
 		switch (revel) {
 		case "관리자":
-			System.out.println("회원관리, 게시글 관리 게시글 작성, 댓글 작성 게시글 조회");
-			break;
+			System.out.println("회원관리, 게시글 관리, ");
 		case "회원":
-			System.out.println("게시글 작성, 게시글 조회, 댓글 작성");
-			break;
+			System.out.println("게시글 작성, 댓글 작성, ");
 		case "비회원":
 			System.out.println("게시글 조회");
-			break;
-		default:
-			System.out.println("다시입력하세요.");
 		}
 	}
 
@@ -246,35 +255,35 @@ public class ControlPractice {
 		int sj = sc.nextInt();
 
 		System.out.print("출석횟수 : ");
-		int ps = sc.nextInt();
+		int at = sc.nextInt();
 
 		System.out.println("================= 결과 =================");
 
-		Double n1 = num1 * 0.2;
-		Double n2 = num2 * 0.3;
-		Double sj1 = sj * 0.3;
-		Double ps1 = 100 * ps / 20 * 0.2;
-		Double sum = n1 + n2 + sj1 + ps1;
-
+		double n1 = num1 * 0.2;
+		double n2 = num2 * 0.3;
+		double sj1 = sj * 0.3;
+		double at1 = (double) at;
+		double sum = n1 + n2 + sj1 + at1;
+		
+		if (at <= 14) {
+			System.out.println("Fail [출석 회수 부족(" + at + "/20)");
+			return;
+		}
+		
 		System.out.println("중간고사 점수(20) : " + n1);
 
 		System.out.println("기말고사 점수(30) : " + n2);
 
 		System.out.println("과제점수     (30) : " + sj1);
 
-		System.out.println("출석점수     (20) : " + ps1);
+		System.out.println("출석점수     (20) : " + at1);
 
 		System.out.println("총점 : " + sum);
-
+		
 		if (sum >= 70) {
 			System.out.println("Pass");
 		} else
 			System.out.println("Fail");
-
-		if (!(ps > 20 * 0.3)) {
-			System.out.println("Fail [출석 회수 부족(" + ps + "/20)");
-			return;
-		}
 	}
 
 	public void practice10() {

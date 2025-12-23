@@ -111,5 +111,59 @@ public class A_For {
 		for (int i = 1; i <= 9; i++) {
 			System.out.println("2 X " + i + " =" + (2 * i));
 		}
+
+		// 구구단 2단부터 ~ 9단까지 모두 출력
+		for (int dan = 2; dan <= 9; dan++) {
+			for (int i = 1; i <= 9; i++) {
+				System.out.println(dan + " X " + i + " =" + (dan * i));
+			}
+		}
+	}
+
+	public void method8() {
+		// *****\n
+		// *****\n
+		// *****\n
+		// *****\n
+		// 위 출력형식을 중첩 반복문을 이용하여 완성하시오..
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 5; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+
+	public void method9() {
+		// 1***\n
+		// *2**\n
+		// **3*\n
+		// ***4\n
+		
+//		String str = "*****";
+//		char[] arr = str.toCharArray();
+//		arr[0] = '1';
+//		System.out.println(arr);
+		
+//		for (int i = 0; i < 4; i++) {
+//			if(i==0)System.out.print(1);
+//			else System.out.print("*");
+//		}
+//		System.out.println();
+		
+//		for (int i = 0; i < 4; i++) {
+//			if(i==1)System.out.print(2);
+//			else System.out.print("*");
+//		}
+//		System.out.println();
+		
+		for(int i=0; i<4; i++) {
+			for(int j=0; j<4; j++) {
+				if(j==i) System.out.print(i+1);
+				else System.out.print("*");
+			}
+			System.out.println();
+		}
 	}
 }

@@ -7,6 +7,9 @@ public class run {
 		// ai.method6();
 		
 		B_Switch bs = new B_Switch();
-		bs.method2();
+		// bs.method2();
+		
+		B_Continue bc = new B_Continue();
+		bc.method2();
 	}
 }
