@@ -245,17 +245,25 @@ public class ArrayPractice {
 				int addsize = sc.nextInt();
 				
 				sc.nextLine();
-
-				String[] newarr = new String[arr.length + addsize];
-
-				System.arraycopy(arr, 0, newarr, 0, arr.length);
-
-				for (int i = arr.length; i < newarr.length; i++) {
-					System.out.print((i + 1) + "번째 문자열 : ");
-					newarr[i] = sc.nextLine();
-				}
 				
-				arr = newarr;
+				int beforelength = arr.length;
+				arr = Arrays.copyOf(arr, beforelength+addsize);
+				
+				for (int i = beforelength; i < arr.length; i++) {
+					System.out.print((i + 1) + "번째 문자열 : ");
+					arr[i] = sc.nextLine();
+				}
+
+//				String[] newarr = new String[arr.length + addsize];
+//				
+//				System.arraycopy(arr, 0, newarr, 0, arr.length);
+//
+//				for (int i = arr.length; i < newarr.length; i++) {
+//					System.out.print((i + 1) + "번째 문자열 : ");
+//					newarr[i] = sc.nextLine();
+//				}
+//				
+//				arr = newarr;
 				
 			} else if (ch == 'N' || ch == 'n') {
 				break;
