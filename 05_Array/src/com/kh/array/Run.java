@@ -4,9 +4,9 @@ public class Run {
 
 	public static void main(String[] args) {
 		A_Array aa = new A_Array();
-		// aa.method7();
+		aa.method5();
 		B_ArrayCopy ba = new B_ArrayCopy ();
-		ba.method5();
+		// ba.method5();
 
 	}
 

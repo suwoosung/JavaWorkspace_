@@ -1,5 +1,6 @@
 package com.kh.array;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayPractice {
@@ -74,7 +75,6 @@ public class ArrayPractice {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print("배열 " + i + "번째 인덱스에 넣을 값 : ");
 			arr[i] = sc.nextInt();
-			System.out.print(arr[i] + " ");
 			sum += arr[i];
 		}
 
@@ -82,7 +82,7 @@ public class ArrayPractice {
 			System.out.print(arr[i] + " ");
 		}
 
-		System.out.println("총합 : " + sum);
+		System.out.println("\n총합 : " + sum);
 	}
 
 	public void practice6() {
@@ -123,69 +123,67 @@ public class ArrayPractice {
 		char ch = sc.next().charAt(0);
 
 		System.out.print(str + "에 " + ch + "가 존재하는 위치(인덱스) : ");
-	
+
 		int count = 0;
 
 		for (int i = 0; i < arr.length; i++) {
-			if (ch == arr[i]) {	
+			if (ch == arr[i]) {
 				count++;
 				System.out.print(i + " ");
 			}
 		}
-		System.out.println("\ni 개수: "+count);
+		System.out.println("\ni 개수: " + count);
 	}
-	
+
 	public void practice8() {
 		System.out.print("주민등록번호(-포함) : ");
 		String str = sc.next();
 		char[] arr = str.toCharArray();
-		
-		for(int i=8; i<str.length(); i++) {
-			arr[i]='*';
+
+		for (int i = 8; i < str.length(); i++) {
+			arr[i] = '*';
 		}
-		
-		for(int i=0; i<str.length(); i++) {
-			System.out.print(arr[i]);;
+
+		for (int i = 0; i < str.length(); i++) {
+			System.out.print(arr[i]);
 		}
 	}
-	
+
 	public void practice9() {
 		int[] arr = new int[10];
-				
-		for(int i=0; i<arr.length; i++) {
-			arr[i] = (int)(Math.random()*10+1);
-			System.out.print(arr[i]+" ");
+
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int) (Math.random() * 10 + 1);
+			System.out.print(arr[i] + " ");
 		}
-		
 
 		int min = arr[0];
 		int max = arr[0];
-		
-		for(int i=1; i<arr.length; i++) {
-			if(arr[i] > max) {
+
+		for (int i = 1; i < arr.length; i++) {
+			if (arr[i] > max) {
 				max = arr[i];
 			}
 		}
-		
-		for(int i=1; i<arr.length; i++) {
-			if(arr[i] < min) {
+
+		for (int i = 1; i < arr.length; i++) {
+			if (arr[i] < min) {
 				min = arr[i];
 			}
 		}
-		System.out.print("\n최대값 : "+max);
-		System.out.print("\n최소값 : "+min);
+		System.out.print("\n최대값 : " + max);
+		System.out.print("\n최소값 : " + min);
 	}
-	
+
 	public void practice10() {
 		int[] arr = new int[10];
-		
-		for(int i=0; i<arr.length; i++) {
-			arr[i] = (int)(Math.random()*10+1);
-			
-			int random = arr[i];
+
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int) (Math.random() * 10 + 1);
+
 			boolean isDup = false;
-			for(int j=0; j<i; j++) {
-				if (arr[j]==random) {
+			for (int j = 0; j < i; j++) {
+				if (arr[j] == arr[i]) {
 					isDup = true;
 					break;
 				}
@@ -194,32 +192,75 @@ public class ArrayPractice {
 				i--;
 			}
 		}
-		
-		for(int i=0; i<arr.length; i++) {
-			int random = arr[i];
-			System.out.print(random+" ");
+
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
 		}
 	}
-	
+
 	public void practice11() {
-		
+
 		System.out.print("정수 : ");
 		int num = sc.nextInt();
-		
-		int[] arr = new int[num];
-		
-		if (num%2==0 && num<3) {
+
+		if (num % 2 == 0 || num < 3) {
 			System.out.println("다시 입력하세요.");
 			practice11();
 			return;
 		}
-		
-		for (int i=0; i<arr.length; i++) {
-			arr[i] = num;
+
+		int[] arr = new int[num];
+
+		int count = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			if (i <= num / 2) {
+				System.out.print(++count + " ");
+			} else {
+				System.out.print(--count + " ");
+			}
 		}
 	}
+
+	public void practice12() {
+
+		System.out.print("배열의 크기를 입력하세요 : ");
+		int size = sc.nextInt();
+		
+		sc.nextLine();
+
+		String[] arr = new String[size];
+
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print((i + 1) + "번째 문자열 : ");
+			arr[i] = sc.nextLine();
+		}
+
+		while (true) {
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			char ch = sc.next().charAt(0);
+
+			if (ch == 'Y' || ch == 'y') {
+				System.out.print("더 입력하고 싶은 개수 : ");
+				int addsize = sc.nextInt();
+				
+				sc.nextLine();
+
+				String[] newarr = new String[arr.length + addsize];
+
+				System.arraycopy(arr, 0, newarr, 0, arr.length);
+
+				for (int i = arr.length; i < newarr.length; i++) {
+					System.out.print((i + 1) + "번째 문자열 : ");
+					newarr[i] = sc.nextLine();
+				}
+				
+				arr = newarr;
+				
+			} else if (ch == 'N' || ch == 'n') {
+				break;
+			}
+		}
+		System.out.println(Arrays.toString(arr));
+	}
 }
-
-
-
-
