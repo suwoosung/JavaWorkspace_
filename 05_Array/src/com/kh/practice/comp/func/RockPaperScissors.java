@@ -19,7 +19,7 @@ public class RockPaperScissors {
 		while(true) {
 			
 			System.out.print("가위바위보 : ");
-			String  user = sc.next();
+			String user = sc.next();
 			
 			if (user.equals("exit")) {
 				System.out.println(count+"전 "+wins+"승 "+draws+"무 "+losses+"패");
@@ -36,9 +36,10 @@ public class RockPaperScissors {
 			int random = (int) (Math.random()*3);
 			String com = arr[random];
 			
-			System.out.print("컴퓨터 : ");
-			System.out.println(com);
+			System.out.print("컴퓨터 : "+com);
+			System.out.print("\n"+name+" : ");
 			
+			// 두 값이 같은 경우
 			if (user.equals(com)) {
 				System.out.println("비겼습니다.");
 				System.out.println();
