@@ -8,8 +8,8 @@ public class UpAndDown {
 
 	public void upDown() {
 
-		int count = 0;
 		int random = (int) (Math.random() * 100 + 1);
+		int count = 0;
 
 		while (true) {
 			System.out.print("1~100 사이의 임의의 난수를 맞춰보세요 : ");
@@ -17,11 +17,11 @@ public class UpAndDown {
 
 			if (!(num >= 1 && num <= 100)) {
 				System.out.println("1~100 사이의 숫자를 입력해주세요.");
-				return;
+				continue;
 			}
 
 			if (num > random) {
-				System.out.println("DOwn !");
+				System.out.println("Down !");
 				count++;
 			} else if (num < random) {
 				System.out.println("UP !");

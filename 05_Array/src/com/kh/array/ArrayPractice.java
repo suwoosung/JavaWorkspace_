@@ -117,7 +117,7 @@ public class ArrayPractice {
 	public void practice7() {
 		System.out.print("문자열 : ");
 		String str = sc.next();
-		char[] arr = str.toCharArray();
+		char[] arr = str.toCharArray(); // 문자열을 문자배열로 변환하는 메서드
 
 		System.out.print("문자 : ");
 		char ch = sc.next().charAt(0);
@@ -138,14 +138,15 @@ public class ArrayPractice {
 	public void practice8() {
 		System.out.print("주민등록번호(-포함) : ");
 		String str = sc.next();
-		char[] arr = str.toCharArray();
-
+		char[] arr = str.toCharArray(); // 원본배열
+		char [] copy = Arrays.copyOf(arr,  arr.length); // 복사본
+		
 		for (int i = 8; i < str.length(); i++) {
-			arr[i] = '*';
+			copy[i] = '*';
 		}
 
 		for (int i = 0; i < str.length(); i++) {
-			System.out.print(arr[i]);
+			System.out.print(copy[i]);
 		}
 	}
 
@@ -156,7 +157,8 @@ public class ArrayPractice {
 			arr[i] = (int) (Math.random() * 10 + 1);
 			System.out.print(arr[i] + " ");
 		}
-
+		
+		// 최대값, 최소값
 		int min = arr[0];
 		int max = arr[0];
 
@@ -183,6 +185,7 @@ public class ArrayPractice {
 
 			boolean isDup = false;
 			for (int j = 0; j < i; j++) {
+				// 중복검사
 				if (arr[j] == arr[i]) {
 					isDup = true;
 					break;
@@ -210,12 +213,14 @@ public class ArrayPractice {
 		}
 
 		int[] arr = new int[num];
-
+		int mid = num / 2;
 		int count = 0;
 
 		for (int i = 0; i < arr.length; i++) {
-			if (i <= num / 2) {
+			// mid까지는 오름차순
+			if (i <= mid) {
 				System.out.print(++count + " ");
+			// mid이후는 내림차순
 			} else {
 				System.out.print(--count + " ");
 			}
@@ -227,31 +232,33 @@ public class ArrayPractice {
 		System.out.print("배열의 크기를 입력하세요 : ");
 		int size = sc.nextInt();
 		
+		String[] arr = new String[size]; // [자바의 정석, 알고리즘, c프로그래밍]
+		
 		sc.nextLine();
-
-		String[] arr = new String[size];
 
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print((i + 1) + "번째 문자열 : ");
-			arr[i] = sc.nextLine();
+			arr[i] = sc.nextLine(); // 띄어쓰기 포함.
 		}
 
 		while (true) {
 			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
-			char ch = sc.next().charAt(0);
+			char ch = sc.nextLine().charAt(0);
 
 			if (ch == 'Y' || ch == 'y') {
 				System.out.print("더 입력하고 싶은 개수 : ");
 				int addsize = sc.nextInt();
+				// [자바의 정석, 알고리즘, c프로그래밍]
+				// [자바의 정석, 알고리즘, c프로그래밍, ㅇㅇ, 11]
+				// [자바의 정석, 알고리즘, c프로그래밍, ㅇㅇ, 12, 영단어 600]
+				
+				String[] copy = Arrays.copyOf(arr, arr.length+addsize);
 				
 				sc.nextLine();
 				
-				int beforelength = arr.length;
-				arr = Arrays.copyOf(arr, beforelength+addsize);
-				
-				for (int i = beforelength; i < arr.length; i++) {
+				for (int i = arr.length; i < copy.length; i++) {
 					System.out.print((i + 1) + "번째 문자열 : ");
-					arr[i] = sc.nextLine();
+					copy[i] = sc.nextLine(); // 띄어쓰기 포함.
 				}
 
 //				String[] newarr = new String[arr.length + addsize];
@@ -265,6 +272,7 @@ public class ArrayPractice {
 //				
 //				arr = newarr;
 				
+				arr = copy; // 얕은복사
 			} else if (ch == 'N' || ch == 'n') {
 				break;
 			}
