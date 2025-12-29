@@ -1,5 +1,6 @@
 package com.kh.practice.dimension;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DimensionPractice {
@@ -71,20 +72,141 @@ public class DimensionPractice {
 
 			for (int i = 0; i < arr.length; i++) {
 				for (int j = 0; j < arr[i].length; j++) {
-					int num = 0;
-					
-						
-					num = (int) (Math.random() * 24 + 65);
-					
-					arr[i][j] = (char) num;
-					System.out.print((arr[i][j] + " "));
-					
 
-					}
-				System.out.println();
+					int random = (int) (Math.random() * 24 + 65);
+
+					arr[i][j] = (char) random;
+					System.out.print((arr[i][j] + " "));
+
 				}
-				break;
+				System.out.println();
+			}
+			break;
+		}
+	}
+
+	public void practice6() {
+
+		String[][] strArr = new String[][] { { "이", "까", "왔", "앞", "힘" }, { "차", "지", "습", "으", "냅" },
+				{ "원", "열", "니", "로", "시" }, { "배", "심", "다", "좀", "다" }, { "열", "히", "! ", "더", "!! " } };
+
+		for (int i = 0; i < strArr.length; i++) {
+			for (int j = 0; j < strArr[i].length; j++) {
+				System.out.print(strArr[j][i]);
+			}
+			System.out.println();
+		}
+	}
+
+	public void practice7() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("행의 크기 : ");
+		int colSize = sc.nextInt();
+
+		int[][] arr = new int[colSize][];
+		char ch = 'a';
+
+		for (int i = 0; i < colSize; i++) {
+			System.out.print(i + "행의 열 크기 : ");
+			int rowSize = sc.nextInt();
+
+			arr[i] = new int[rowSize];
+		}
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = ch;
+				System.out.print((char) arr[i][j] + " ");
+				ch++;
+			}
+			System.out.println();
+		}
+	}
+
+	public void practice8() {
+
+		String[][] arr1 = new String[3][];
+		String[][] arr2 = new String[3][];
+
+		arr1[0] = new String[] { "강건강", "남나나" };
+		arr1[1] = new String[] { "도대남", "류라라" };
+		arr1[2] = new String[] { "문미미", "박보배" };
+
+		arr2[0] = new String[] { "송성실", "윤예의" };
+		arr2[1] = new String[] { "진재주", "차천축" };
+		arr2[2] = new String[] { "피풍표", "홍하하" };
+
+		System.out.println("== 1분단 ==");
+
+		for (int i = 0; i < arr1.length; i++) {
+			for (int j = 0; j < arr1[i].length; j++) {
+				System.out.print(arr1[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println("== 2분단 ==");
+
+		for (int i = 0; i < arr2.length; i++) {
+			for (int j = 0; j < arr2[i].length; j++) {
+				System.out.print(arr2[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+
+	public void practice9() {
+		Scanner sc = new Scanner(System.in);
+
+		String[][] arr1 = new String[3][];
+		String[][] arr2 = new String[3][];
+
+		arr1[0] = new String[] { "강건강", "남나나" };
+		arr1[1] = new String[] { "도대남", "류라라" };
+		arr1[2] = new String[] { "문미미", "박보배" };
+
+		arr2[0] = new String[] { "송성실", "윤예의" };
+		arr2[1] = new String[] { "진재주", "차천축" };
+		arr2[2] = new String[] { "피풍표", "홍하하" };
+
+		System.out.println("== 1분단 ==");
+
+		for (int i = 0; i < arr1.length; i++) {
+			for (int j = 0; j < arr1[i].length; j++) {
+				System.out.print(arr1[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println("== 2분단 ==");
+
+		for (int i = 0; i < arr2.length; i++) {
+			for (int j = 0; j < arr2[i].length; j++) {
+				System.out.print(arr2[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println("===========================");
+
+		String[][] totalArr = new String[arr1.length + arr2.length][];
+		System.arraycopy(arr1, 0, totalArr, 0, arr1.length);
+		System.arraycopy(arr2, 0, totalArr, arr1.length, arr2.length);
+
+		System.out.print("검색할 학생 이름을 입력하세요 : ");
+		String name = sc.next();
+
+		for (int i = 0; i < totalArr.length; i++) {
+			for (int j = 0; j < totalArr[i].length; j++) {
+				if(totalArr[i][j].equals(name)) {
+				int bunban = (i < 3) ? 1 : 2;
+				int row = i % 3 + 1;
+				String position = (j == 0) ? "왼쪽" : "오른쪽";
+				
+				System.out.print("검색하신 "+name+" 학생은 "+bunban+"분단 "+row+" 번째 줄 "+position+"에 있습니다.");
+				}
 			}
 		}
-	
+	}
 }
