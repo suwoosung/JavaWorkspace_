@@ -9,7 +9,7 @@ public class UpAndDown {
 	public void upDown() {
 
 		int random = (int) (Math.random() * 100 + 1);
-		int count = 0;
+		int count = 1;
 
 		while (true) {
 			System.out.print("1~100 사이의 임의의 난수를 맞춰보세요 : ");

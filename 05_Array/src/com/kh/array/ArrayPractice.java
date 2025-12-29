@@ -252,7 +252,7 @@ public class ArrayPractice {
 				// [자바의 정석, 알고리즘, c프로그래밍, ㅇㅇ, 11]
 				// [자바의 정석, 알고리즘, c프로그래밍, ㅇㅇ, 12, 영단어 600]
 				
-				String[] copy = Arrays.copyOf(arr, arr.length+addsize);
+				String[] copy = Arrays.copyOf(arr, arr.length+addsize); // 깊은복사
 				
 				sc.nextLine();
 				
