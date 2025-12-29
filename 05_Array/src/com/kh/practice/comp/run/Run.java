@@ -8,10 +8,10 @@ public class Run {
 	public static void main(String[] args) {
 		
 		UpAndDown up = new UpAndDown();
-		up.upDown();
+		//up.upDown();
 		
 		RockPaperScissors ro = new RockPaperScissors();
-		//ro.rps();
+		ro.rps();
 	}
 
 }

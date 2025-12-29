@@ -34,19 +34,19 @@ public class RockPaperScissors {
 			
 			String[] arr = {"가위", "바위", "보"};
 			int random = (int) (Math.random()*3);
-			String str = arr[random];
+			String com = arr[random];
 			
 			System.out.print("컴퓨터 : ");
-			System.out.println(str);
+			System.out.println(com);
 			
-			if (user.equals(str)) {
+			if (user.equals(com)) {
 				System.out.println("비겼습니다.");
 				System.out.println();
 				draws++;
 				count++;
-			} else if (user.equals("가위") && str.equals("보")
-					|| user.equals("바위") && str.equals("가위")
-					|| user.equals("보") && str.equals("바위")) {
+			} else if ((user.equals("가위") && com.equals("보"))
+					|| (user.equals("바위") && com.equals("가위"))
+					|| (user.equals("보") && com.equals("바위"))) {
 				System.out.println("이겼습니다.");
 				System.out.println();
 				wins++;
