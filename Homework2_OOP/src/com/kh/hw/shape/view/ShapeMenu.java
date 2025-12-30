@@ -140,7 +140,6 @@ public class ShapeMenu {
 		if(type==3) {
 			//tc.print()의 호출 결과는 "문자열"값이다.
 			// 문자열 값을 Console창에 출력하기 위해서는, 출력문인 println문이 필요함.
-	
 			System.out.println(tc.print());			
 		} else if(type==4){
 			System.out.println(scr.print());

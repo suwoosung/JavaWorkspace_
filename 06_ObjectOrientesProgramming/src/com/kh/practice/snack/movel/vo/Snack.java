@@ -1,5 +1,6 @@
 package com.kh.practice.snack.movel.vo;
 
+// 데이터 저장용
 public class Snack {
 	private String kind; // 종류
 	private String name; // 이름

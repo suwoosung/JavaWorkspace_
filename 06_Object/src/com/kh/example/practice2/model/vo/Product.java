@@ -11,6 +11,6 @@ public class Product {
 	}
 	
 	public void information() {
-		System.out.println(pName+", "+price+", "+brand);
+		System.out.println(pName+" , "+price+", "+brand);
 	}
 }
