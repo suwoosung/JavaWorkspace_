@@ -31,7 +31,7 @@ public class Student {
 	public String getName() {
 		
 		// 값을 반환하는 방법 : return;
-		return name;
+		return this.name;
 	}
 	
 	// age에 대한 get/setter

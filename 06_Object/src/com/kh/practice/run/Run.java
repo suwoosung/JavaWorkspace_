@@ -6,7 +6,7 @@ public class Run {
 
 	public static void main(String[] args) {
 		DimensionPractice di = new DimensionPractice();
-		di.practice9();
+		di.practice5();
 	}
 
 }

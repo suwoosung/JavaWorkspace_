@@ -7,7 +7,7 @@ public class DimensionPractice {
 
 	public void practice1() {
 
-		int[][] arr = new int[3][3];
+		String[][] arr = new String[3][3];
 
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
@@ -44,10 +44,23 @@ public class DimensionPractice {
 	}
 
 	public void practice4() {
-		int[][] arr = { { 6, 6, 1, 13 }, { 4, 10, 8, 22 }, { 8, 6, 5, 19 }, { 18, 22, 14, 108 } };
+		int[][] arr =new int[4][4];
+//		int[][] arr = { { 6, 6, 1, 13 },
+//					  { 4, 10, 8, 22 },
+//					  { 8, 6, 5, 19 },
+//					  { 18, 22, 14, 108 } };
 
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr[i].length; j++) {
+		for (int i = 0; i < arr.length-1; i++) {
+			for (int j = 0; j < arr[i].length-1; j++) {
+				arr[i][j] = (int)(Math.random()*10+1);
+				arr[i][3] += arr[i][j];
+				arr[3][j] += arr[i][j];
+				arr[3][3] += arr[i][j] * 2;
+			}
+		}
+		
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<arr[i].length; j++) {
 				System.out.print(arr[i][j] + " ");
 			}
 			System.out.println();
@@ -59,11 +72,11 @@ public class DimensionPractice {
 		Scanner sc = new Scanner(System.in);
 		while (true) {
 			System.out.print("행 크기 : ");
-			int col = sc.nextInt();
-			System.out.print("열 크기 : ");
 			int row = sc.nextInt();
+			System.out.print("열 크기 : ");
+			int col = sc.nextInt();
 
-			char[][] arr = new char[col][row];
+			char[][] arr = new char[row][col];
 
 			if (!(col >= 1 && col <= 10 && row >= 1 && row <= 10)) {
 				System.out.println("반드시 1~10사이의 정수를 입력해야 합니다.");
@@ -73,7 +86,7 @@ public class DimensionPractice {
 			for (int i = 0; i < arr.length; i++) {
 				for (int j = 0; j < arr[i].length; j++) {
 
-					int random = (int) (Math.random() * 24 + 65);
+					int random = (int) (Math.random() * 26 + 65);
 
 					arr[i][j] = (char) random;
 					System.out.print((arr[i][j] + " "));
@@ -102,16 +115,16 @@ public class DimensionPractice {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("행의 크기 : ");
-		int colSize = sc.nextInt();
+		int rowSize = sc.nextInt();
 
-		int[][] arr = new int[colSize][];
+		int[][] arr = new int[rowSize][];
 		char ch = 'a';
 
-		for (int i = 0; i < colSize; i++) {
+		for (int i = 0; i < rowSize; i++) {
 			System.out.print(i + "행의 열 크기 : ");
-			int rowSize = sc.nextInt();
+			int colSize = sc.nextInt();
 
-			arr[i] = new int[rowSize];
+			arr[i] = new int[colSize];
 		}
 
 		for (int i = 0; i < arr.length; i++) {
@@ -190,16 +203,16 @@ public class DimensionPractice {
 
 		System.out.println("===========================");
 
-		String[][] totalArr = new String[arr1.length + arr2.length][];
-		System.arraycopy(arr1, 0, totalArr, 0, arr1.length);
-		System.arraycopy(arr2, 0, totalArr, arr1.length, arr2.length);
+		String[][] copyArr = new String[arr1.length + arr2.length][];
+		System.arraycopy(arr1, 0, copyArr, 0, arr1.length);
+		System.arraycopy(arr2, 0, copyArr, arr1.length, arr2.length);
 
 		System.out.print("검색할 학생 이름을 입력하세요 : ");
 		String name = sc.next();
 
-		for (int i = 0; i < totalArr.length; i++) {
-			for (int j = 0; j < totalArr[i].length; j++) {
-				if(totalArr[i][j].equals(name)) {
+		for (int i = 0; i < copyArr.length; i++) {
+			for (int j = 0; j < copyArr[i].length; j++) {
+				if(copyArr[i][j].equals(name)) {
 				int bunban = (i < 3) ? 1 : 2;
 				int row = i % 3 + 1;
 				String position = (j == 0) ? "왼쪽" : "오른쪽";
