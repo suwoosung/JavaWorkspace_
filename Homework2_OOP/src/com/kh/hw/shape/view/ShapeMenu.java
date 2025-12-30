@@ -106,6 +106,7 @@ public class ShapeMenu {
 			System.out.print("색깔을 입력하세요 : ");
 			String color = sc.next();
 			tc.paintColor(color);
+			System.out.println("색이 수정되었습니다");
 		
 		} 
 		else if(type==4 && menuNum==1) {
