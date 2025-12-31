@@ -18,6 +18,6 @@ public class TriangleController {
 	}
 	
 	public String print() {
-		return s.information();
+		return "삼각형"+s.information();
 	}
 }
