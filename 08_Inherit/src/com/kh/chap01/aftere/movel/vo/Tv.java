@@ -13,8 +13,6 @@ public class Tv extends Product {
 		this.inch = inch;
 	}
 
-	
-	
 	public int getInch() {
 		return inch;
 	}

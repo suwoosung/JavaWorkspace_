@@ -78,6 +78,4 @@ public class Member {
 		return id+", "+name+", "+password+","+
 			email+", "+gender+", "+age;	
 	}
-	
-	
 }
