@@ -4,48 +4,35 @@ import com.kh.hw.employee.model.vo.Employee;
 
 public class EmployeeController {
 	private Employee e = new Employee();
-	
+
 	public void add(int empNo, String name, char gender, String phone) {
-		this.e = new Employee(empNo, name, gender, phone);
+		e = new Employee(empNo, name, gender, phone);
 	}
-	
-	public void add(int empNo, String name, char gender, String phone,
-			String dept, int salary, double bonus) {
-		this.e = new Employee(empNo, name, gender, phone, dept, salary, bonus);
+
+	public void add(int empNo, String name, char gender, String phone, String dept, int salary, double bonus) {
+		e = new Employee(empNo, name, gender, phone, dept, salary, bonus);
 	}
-	
+
 	public void modify(String phone) {
-		if(e!=null) {
-			e.setPhone(phone);
-		}
+		e.setPhone(phone);
 	}
-	
+
 	public void modify(int salary) {
-		if(e!=null) {
-			e.setSalary(salary);
-		}
+		e.setSalary(salary);
 	}
-	
+
 	public void modify(double bonus) {
-		if(e!=null) {
-			e.setBonus(bonus);
-		}
+		e.setBonus(bonus);
 	}
-	
+
 	public Employee remove() {
-		Employee temp = e;
-		this.e = null;
-		return temp;
+		Employee delete = e; // 기존 주소값 복사
+		e = null; // 삭제처리
+		return delete; // 복사된 주소값 반환
 	}
-	
+
 	public String inform() {
-		if (e==null) {
-			return null;
-		}
-		return e.printEmployee();
-	}
-	
-	public Employee getE() {
-		return e;
+		if(e==null) return null;
+		return e.toString();
 	}
 }

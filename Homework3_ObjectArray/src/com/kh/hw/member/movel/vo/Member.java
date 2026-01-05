@@ -74,8 +74,9 @@ public class Member {
 	}
 	
 	// Member 클래스의 모든 필드값들을 합쳐 반환
-	public String inform() {
-		return id+", "+name+", "+password+","+
+	@Override
+	public String toString() {
+		return id+", "+name+", "+password+", "+
 			email+", "+gender+", "+age;	
 	}
 }

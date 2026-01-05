@@ -1,16 +1,19 @@
 package com.kh.hw.member.controller;
 
+import java.util.Arrays;
+
 import com.kh.hw.member.movel.vo.Member;
 
 public class MemberController {
 
-	public int SIZE = 10;
-	private Member[] m = new Member[SIZE];
+	public final static int SIZE = 10;
+	private Member[] m = new Member[SIZE]; // [null, null, ..]
 
 	// 현재 존재하는 멤버 수 반환
 	public int existMemberNum() {
 		int count = 0;
 		for (Member i : m) {
+			// 객체가 초기화 된경우
 			if (i != null) {
 				count++;
 			}
@@ -22,6 +25,7 @@ public class MemberController {
 	public Boolean checkId(String inputId) {
 		boolean isDup = false;
 		for (Member i : m) {
+			// 객체배열에 저장된 Member객체의 id값과 사용자가 입력한 id값을 비교.
 			if (i!=null && i.getId().equals(inputId)) {
 				isDup = true;
 				break;
@@ -50,26 +54,31 @@ public class MemberController {
 		// 회원의 정보(information함수 호출)를 반환
 		for (Member i : m) {
 			if (i != null && i.getId().equals(id))
-				return i.inform();
+				return i.toString();
 		}
 		return null;
 	}
 
 	// 이름으로 회원을 조회하는 메소드
 	public Member[] searchName(String name) {
-		Member[] arr = new Member[10];
+		Member[] m = new Member[SIZE];
 		int count = 0;
 
-		for (Member i : m) {
+		for (Member i : this.m) {
 			if (i != null && i.getName().equals(name)) {
-				arr[count++] = i;
+				m[count++] = i;
 			}
 		}
-
+		
+		// 찾고자 하는 회원이 한명도 없는 경우
 		if (count == 0) {
 			return null;
+		} else {
+			// 내가 찾은 회원이 1명인 경우
+			// [m, null, null]
+			Member[] copy = Arrays.copyOf(m, count); // [m, m]
 		}
-		return arr;
+		return m;
 	}
 
 	// 이메일로 회원을 조회하는 메소드
@@ -86,10 +95,10 @@ public class MemberController {
 	}
 
 	// 비밀번호 변경 메소드
-	public Boolean updatePassword(String id, String password) {
+	public boolean updatePassword(String id, String password) {
 		for (Member i : m) {
 			if (i != null && i.getId().equals(id)) {
-				i.setPassword(password);
+				i.setPassword(password); // 비밀번호 변경
 				return true;
 			}
 		}
@@ -97,7 +106,7 @@ public class MemberController {
 	}
 
 	// 이름 변경 메소드
-	public Boolean updateName(String id, String name) {
+	public boolean updateName(String id, String name) {
 		for (Member i : m) {
 			if (i != null && i.getId().equals(id)) {
 				i.setName(name);
@@ -108,7 +117,7 @@ public class MemberController {
 	}
 
 	// 이메일 변경 메소드
-	public Boolean updateEmail(String id, String email) {
+	public boolean updateEmail(String id, String email) {
 		for (Member i : m) {
 			if (i != null && i.getId().equals(id)) {
 				i.setEmail(email);
@@ -119,11 +128,11 @@ public class MemberController {
 	}
 
 	// 한 회원만 삭제하는 메소드
-	public Boolean delete(String id) {
+	public boolean delete(String id) {
 		for (int i=0; i<m.length; i++) {
 			if (m[i] != null && m[i].getId().equals(id)) {
-				m[i] = null;
-				return true;
+				m[i] = null; // 삭제처리
+				return true; // 삭제완료
 			}
 		}
 		return false;
@@ -131,9 +140,8 @@ public class MemberController {
 
 	// 전체 회원을 삭제하는 메소드
 	public void delete() {
-		for(int i=0; i<m.length; i++) {
-			m[i] = null;
-		}
+		// 전체 회원을 삭제하는 메소드
+		m = new Member[SIZE];
 	}
 
 	// Member객체 반환 메소드

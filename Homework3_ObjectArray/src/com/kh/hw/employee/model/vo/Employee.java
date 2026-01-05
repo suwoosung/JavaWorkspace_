@@ -31,10 +31,6 @@ public class Employee {
 		this.bonus = bonus;
 	} 
 	
-	public String printEmployee() {
-		return empNo+", "+name+", "+gender+", "+phone+", "+dept+", "+salary+", "+bonus;
-	}
-
 	public int getEmpNo() {
 		return empNo;
 	}
@@ -89,5 +85,10 @@ public class Employee {
 
 	public void setBonus(double bonus) {
 		this.bonus = bonus;
+	}
+	
+	@Override
+	public String toString() {
+		return empNo+", "+name+", "+gender+", "+phone+", "+dept+", "+salary+", "+bonus;
 	}
 }
