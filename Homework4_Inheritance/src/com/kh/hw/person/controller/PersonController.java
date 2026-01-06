@@ -9,28 +9,35 @@ public class PersonController {
 
 	// 각 객체배열에 저장된 객체의 수를 정수배열에 담아 반환하는 메소드
 	public int[] PersonCount() {
-		int sCount = 0;
-		int eCount = 0;
-		
-		for(Student i : s) {
-			if(i != null) {
-				sCount++;
+		int[] arr = new int[2];
+
+		int count = 0;
+		for (Student i : s) {
+			if (i != null) {
+				count++;
 			}
 		}
-		
-		for(Employee i : e) {
-			if(i != null) {
-				eCount++;
+		arr[0] = count;
+
+		count = 0;
+		for (Employee i : e) {
+			if (i != null) {
+				count++;
 			}
 		}
-		return new int[] {sCount, eCount};
+		arr[1] = count;
+
+		return arr;
 	}
 
 	// 매개변수로 받아온 데이터를 학생 객체배열 중 빈 곳에 저장하는 메소드
 	public void insertStudent(String name, int age, double height, double weight, int grade, String major) {
-		
-		for (Student i : s) {
-			i = new Student(name, age, height, weight, grade, major);
+		Student std = new Student(name, age, height, weight, grade, major);
+		for (int i = 0; i < s.length; i++) {
+			if (s[i] != null) {
+				s[i] = std;
+				break;
+			}
 		}
 	}
 
@@ -41,9 +48,11 @@ public class PersonController {
 
 	// 매개변수로 받아온 데이터를 사원 객체 배열 중 빈 곳에 저장되는 메소드
 	public void insertEmployee(String name, int age, double height, double weight, int salary, String dept) {
-		
-		for (Employee i : e) {
-			i = new Employee(name, age, height, weight, salary, dept);
+		Employee emp = new Employee(name, age, height, weight, salary, dept);
+		for (int i = 0; i < e.length; i++) {
+			if (e[i] != null) {
+				e[i] = emp;
+			}
 		}
 	}
 
