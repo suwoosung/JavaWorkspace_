@@ -17,6 +17,13 @@ public class PhoneController {
 		for(int i=0; i<arr.length; i++) {
 			// 1안 downcasting
 			result[i] = ((SmartPhone)arr[i]).printInformation();
+			
+			// 2안 instanceof
+			if(arr[i] instanceof GalaxyNote9) {
+				result[i] = ((GalaxyNote9)arr[i]).printInformation();
+			} else if (arr[i] instanceof V40) {
+				result[i] = ((V40)arr[i]).printInformation();
+			}
 		}
 		return result;
 	}

@@ -14,7 +14,6 @@ public class PersonMenu {
 
 		while (true) {
 			int[] currentCount = pc.PersonCount();
-
 			System.out.println("학생은 최대 10명까지 저장할 수 있습니다.");
 			System.out.println("현재 저장된 학생은 " + currentCount[0] + "명입니다.");
 			System.out.println("사원은 최대 3명까지 저장할 수 있습니다.");
@@ -45,27 +44,24 @@ public class PersonMenu {
 
 	public void studentMenu() {
 		while (true) {
-			int[] currentCount = pc.PersonCount();
-
 			System.out.println("1. 학생 추가");
 			System.out.println("2. 학생 보기");
 			System.out.println("9. 메인으로");
-			if (currentCount[0] == 3) {
+			int currentCount = pc.PersonCount()[0];
+			if (currentCount == 3) {
 				System.out.println("학생을 담을 수 있는 공간이 꽉 찼기 때문에 학생 추가를 종료하고 학생메뉴로 돌아갑니다.");
 			}
 			System.out.print("메뉴 번호 : ");
 			int menu = sc.nextInt();
 			System.out.println();
-			
 
 			switch (menu) {
 			case 1:
-				if (currentCount[0] == 3) {
+				if (currentCount == 3) {
 					System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
 					continue;
-				} else {
-					insertStudent();
 				}
+				insertStudent();
 				break;
 			case 2:
 				printStudent();
@@ -81,27 +77,24 @@ public class PersonMenu {
 
 	public void employeeMenu() {
 		while (true) {
-			int[] currentCount = pc.PersonCount();
-
 			System.out.println("1. 사원 추가");
 			System.out.println("2. 사원 보기");
 			System.out.println("9. 메인으로");
-			if (currentCount[1] == 10) {
+			int currentCount = pc.PersonCount()[1];
+			if (currentCount == 10) {
 				System.out.println("학생을 담을 수 있는 공간이 꽉 찼기 때문에 학생 추가를 종료하고 학생메뉴로 돌아갑니다.");
 			}
 			System.out.print("메뉴 번호 : ");
 			int menu = sc.nextInt();
 			System.out.println();
 
-			
 			switch (menu) {
 			case 1:
-				if (currentCount[1] == 10) {
+				if (currentCount == 10) {
 					System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
 					continue;
-				} else {
-					insertEmployee();
 				}
+				insertEmployee();
 				break;
 			case 2:
 				printEmployee();
@@ -131,18 +124,18 @@ public class PersonMenu {
 			String major = sc.next();
 
 			pc.insertStudent(name, age, height, weight, grade, major);
-			
-			// 추가 후 다시 개수 세어서 판단
-			int[] currentCount = pc.PersonCount();
 
-			if (currentCount[0] != 3) {
+			// 추가 후 다시 개수 세어서 판단
+			int currentCount = pc.PersonCount()[0];
+
+			if (currentCount != 3) {
 				System.out.print("그만 하시려면N(또는 n), 이어하시려면 아무 키나 누르세요 : ");
 				char ch = sc.next().toUpperCase().charAt(0);
 
 				if (ch == 'N') {
 					break;
 				}
-			} else if (currentCount[0] == 3) {
+			} else {
 				System.out.println("학생을 담을 수 있는 공간이 꽉 찼기 때문에 학생 추가를 종료하고 학생메뉴로 돌아갑니다.");
 				break;
 			}
@@ -151,10 +144,11 @@ public class PersonMenu {
 
 	public void printStudent() {
 		Student[] s = pc.printStudent();
-		for(Student std : s) {
-			if(std!=null)System.out.println(std);
+		for (Student std : s) {
+			if (std != null)
+				System.out.println(std);
 		}
-		
+
 	}
 
 	public void insertEmployee() {
@@ -174,24 +168,27 @@ public class PersonMenu {
 
 			pc.insertEmployee(name, age, height, weight, salary, dept);
 
-			int[] currentCount = pc.PersonCount();
-			
-			if (currentCount[1] != 10) {
+			int currentCount = pc.PersonCount()[1];
+
+			if (currentCount != 10) {
 				System.out.print("그만 하시려면N(또는 n), 이어하시려면 아무 키나 누르세요 : ");
 				char ch = sc.next().toUpperCase().charAt(0);
 
 				if (ch == 'N') {
 					break;
 				}
-			} else if (currentCount[1] == 10) {
-				System.out.println("학생을 담을 수 있는 공간이 꽉 찼기 때문에 학생 추가를 종료하고 학생메뉴로 돌아갑니다.");
+			} else {
+				System.out.println("사원을 담을 수 있는 공간이 꽉 찼기 때문에 사원 추가를 종료하고 학생메뉴로 돌아갑니다.");
 				break;
 			}
 		}
 	}
 
 	public void printEmployee() {
-		Employee[] result = pc.printEmplyee();
-		System.out.println(result);
+		Employee[] e = pc.printEmplyee();
+		for (Employee emp : e) {
+			if (emp != null)
+				System.out.println(emp);
+		}
 	}
 }

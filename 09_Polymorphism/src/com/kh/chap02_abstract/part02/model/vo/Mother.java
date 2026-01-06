@@ -28,7 +28,6 @@ public class Mother extends Person implements Basic{
 		// 엄마가 밥을 먹으면
 		// 몸무게 10 증가, 건강도 10감소.
 		setWeight(getWeight() + 10);
-
 		setHealth(getHealth() - 10);
 	}
 	

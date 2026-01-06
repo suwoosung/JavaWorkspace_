@@ -12,16 +12,16 @@ public class PersonController {
 		int[] arr = new int[2];
 
 		int count = 0;
-		for (Student i : s) {
-			if (i != null) {
+		for (Student std : s) {
+			if (std != null) {
 				count++;
 			}
 		}
 		arr[0] = count;
 
 		count = 0;
-		for (Employee i : e) {
-			if (i != null) {
+		for (Employee emp : e) {
+			if (emp != null) {
 				count++;
 			}
 		}

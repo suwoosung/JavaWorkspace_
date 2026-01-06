@@ -16,32 +16,32 @@ public class LibaryController {
 		bList[3] = new CookBook("이혜정의 얼마나 맛있게요", "이혜정", "문학", false);
 		bList[4] = new CookBook("최현석 날 따라해봐", "최현석", "소금책", true);
 	}
+	
+	// 전달받은 mem 주소 값을 해당 회원 레퍼런스(mem)에 대입
 	public void insertMember(Member mem) {
-		
+		this.mem = mem;
 	}
 	
+	// 회원 레퍼런스(mem) 주소 값 리턴
 	public Member myinfo() {
-		
+		return mem;
 	}
 	
+	// 도서 목록 레퍼런스(bList) 주소 값 리턴
 	public Book[] selectAll() {
 		return bList;
 	}
 	
+	// for문을 이용하여 bList 도서 목록들의 도서명과 전달받은 keyword 비교
 	public Book[] searchBook(String keyword) {
 		Book[] arr = new Book[5];
 		int count = 0;
-		for(int i=0; i<arr.length; i++) {
-			
+		for(int i=0; i<bList.length; i++) {
+			if()
 		}
 		return 
 	}
 	
-	private void cotains() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public int rentBook(int index) {
 		
 	}

@@ -43,7 +43,7 @@ public class LibraryMenu {
 		Book[] bList = lc.selectAll();
 		
 		for (int i=0; i<bList.length; i++) {
-			bList[i] = new Book();
+			System.out.println(bList[i]);
 		}
 	}
 
@@ -52,7 +52,9 @@ public class LibraryMenu {
 		String keyword = sc.next();
 		Book[] searchList = lc.searchBook(keyword);
 		
-		
+		for(Book arr : searchList) {
+			System.out.println();
+		}
 		
 	}
 

@@ -13,7 +13,7 @@ public class Run {
 		System.out.println(p1); // 동적바인딩
 		System.out.println(p2);
 		
-		p1.eat();
+		p1.eat(); // 동적 바인딩
 		p2.eat();
 		p1.sleep();
 		p2.sleep();

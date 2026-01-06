@@ -15,7 +15,7 @@ public class MemberMenu {
 
 	public void mainMenu() {
 		while (true) {
-			System.out.println("최대 등록 가능한 회원 수는 " + mc.SIZE + "명입니다.");
+			System.out.println("최대 등록 가능한 회원 수는 " + MemberController.SIZE + "명입니다.");
 			int currentCount = mc.existMemberNum();
 			System.out.println("현재 등록된 회원 수는 " + currentCount + "명입니다.");
 			if (currentCount != MemberController.SIZE) {
