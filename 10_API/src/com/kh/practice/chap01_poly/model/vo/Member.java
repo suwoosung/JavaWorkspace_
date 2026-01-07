@@ -10,11 +10,10 @@ public class Member {
 		
 	}
 
-	public Member(String name, int age, char gender, int couponCount) {
+	public Member(String name, int age, char gender) {
 		this.name = name;
 		this.age = age;
 		this.gender = gender;
-		this.couponCount = couponCount;
 	}
 	
 	public String getName() {

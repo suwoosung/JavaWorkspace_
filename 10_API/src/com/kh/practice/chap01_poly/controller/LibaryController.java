@@ -7,7 +7,7 @@ import com.kh.practice.chap01_poly.model.vo.Member;
 
 public class LibaryController {
 	
-	private Member mem = new Member();;
+	private Member mem = null;
 	private Book[] bList = new Book[5];
 	{
 		bList[0] = new CookBook("백종원의 집밥", "백종원", "tvN", true);
@@ -37,12 +37,24 @@ public class LibaryController {
 		Book[] arr = new Book[5];
 		int count = 0;
 		for(int i=0; i<bList.length; i++) {
-			if()
+			if(bList[i].getTitle().contains(keyword)) {
+				// keyword가 포함된 도서
+				arr[count++] = bList[i];
+			}
 		}
-		return 
+		return arr;
 	}
 	
 	public int rentBook(int index) {
+		int result = 0;
 		
+		Book b = bList[index];
+		if(b instanceof AniBook && mem.getAge()<((AniBook)b).getAccessAge()) {
+			result = 1;
+		} else if(b instanceof CookBook && ((CookBook)b).isCoupon()) {
+			mem.setCouponCount(mem.getCouponCount()+1);
+			result = 2;
+		}
+		return result;
 	}
 }
