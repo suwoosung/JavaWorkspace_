@@ -4,23 +4,43 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class LeapController {
-	private boolean b = false;
+
 	public boolean isLeapYear(int year) {
-		if(year%4==0 && year%100!=0) {
-			b = true;
-		} else if(year%400==0) {
-			b = true;
+		if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+			return true;
 		}
-		return b;	
+		return false;
 	}
-	
+
 	public long leapDate(Calendar c) {
-		Calendar dDay = new GregorianCalendar(1, 0, 1);
-		
-		long num1 = c.getTimeInMillis();
-		long num2 = dDay.getTimeInMillis();
-		long diff = (num1 - num2) / 1000 / 60 / 60 / 24;
-		
-		return diff;
+		long total = 0;
+		for (int i = 1; i < c.get(Calendar.YEAR); i++) {
+			// 1년 ~ 2025년까지
+			if (isLeapYear(i)) {
+				total += 366;
+			} else {
+				total += 365;
+			}
+		}
+		// 2026년 1월 1일 ~ 현재까지 지난 일 수
+		int month = c.get(Calendar.MONTH);
+		for (int i = 0; i < month; i++) {
+			switch (i) {
+			case 1, 3, 5, 7, 8, 10, 12:
+				total += 31;
+				break;
+			case 4, 6, 9, 11:
+				total += 30;
+				break;
+			case 2:
+				total += isLeapYear(c.get(Calendar.YEAR)) ? 29 : 28;
+				break;
+			}
+		}
+		int date = c.get(Calendar.DATE);
+		total += date;
+
+		return total;
 	}
+
 }
