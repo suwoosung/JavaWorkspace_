@@ -35,7 +35,7 @@ public class FileRun {
 			}
 			file2.createNewFile();
 			
-			// File엣 제공하는 메서드들.
+			// File에 제공하는 메서드들.
 			System.out.println(aaa.isFile());
 			System.out.println(aaa.isDirectory());
 			

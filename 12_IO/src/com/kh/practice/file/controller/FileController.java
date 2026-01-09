@@ -1,5 +1,7 @@
 package com.kh.practice.file.controller;
 
+import java.io.FileNotFoundException;
+
 import com.kh.practice.file.dao.FileDAO;
 
 public class FileController {
@@ -14,7 +16,7 @@ public class FileController {
 		fd.fileSave(file, sb.toString());
 	}
 	
-	public StringBuilder fileOpen(String file) {
+	public StringBuilder fileOpen(String file) throws FileNotFoundException {
 		return fd.fileOpen(file);
 	}
 	
