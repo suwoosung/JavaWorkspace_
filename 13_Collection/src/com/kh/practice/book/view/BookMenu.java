@@ -66,10 +66,11 @@ public class BookMenu {
 
 		String[] arr = date.split("-");
 		int year = Integer.parseInt(arr[0]); // "2025"
-		int month = Integer.parseInt(arr[1]);
+		int month = Integer.parseInt(arr[1]) - 1;
 		int day = Integer.parseInt(arr[2]);
 
-		Calendar cal = new GregorianCalendar(year, month - 1, day);
+		//Calendar cal1 = Calendar.getInstance();
+		Calendar cal = new GregorianCalendar(year, month, day);
 
 		Book b = new Book(title, author, price, cal, discount);
 

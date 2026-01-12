@@ -14,35 +14,36 @@ import com.kh.practice.book.model.vo.Book;
 public class BookDAO {
 
 	private Book[] bArr = new Book[10];
-	
+
 	public void fileSave(Book[] bArr) {
-	
-			try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("book.txt"));){
-				
-				for(Book b : bArr) {
-					if(b != null) {
+
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("book.txt"));) {
+
+			for (Book b : bArr) {
+				if (b != null) {
 					oos.writeObject(b);
-					}
 				}
-				
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
 			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-	
+
 	public Book[] fileRead() {
-		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("book.txt"));){
+		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("book.txt"));) {
 			int index = 0;
-			while(index < bArr.length) {
-				bArr[index++] = (Book) ois.readObject();
+			while (true) {
+				Book b = (Book) ois.readObject();
+				bArr[index++] = b;
 			}
-			
+
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (EOFException e) {
-			
+			// 파일의 끝
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
