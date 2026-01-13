@@ -21,24 +21,6 @@ public class Book implements Comparable{
 		this.price = price;
 	}
 	
-	@Override
-	public int hashCode() {
-		return Objects.hash(author, category, price, title);
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Book other = (Book) obj;
-		return Objects.equals(author, other.author) && Objects.equals(category, other.category) && price == other.price
-				&& Objects.equals(title, other.title);
-	}
-
 	public String getTitle() {
 		return title;
 	}
@@ -71,6 +53,29 @@ public class Book implements Comparable{
 		this.price = price;
 	}
 
+	@Override
+	public String toString() {
+		return "Book [title=" + title + ", author=" + author + ", category=" + category + ", price=" + price + "]";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Book other = (Book) obj;
+		return Objects.equals(author, other.author) && Objects.equals(category, other.category) && price == other.price
+				&& Objects.equals(title, other.title);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(author, category, price, title);
+	}
+	
 	@Override
 	public int compareTo(Object o) {
 		return this.title.compareTo(((Book)o).title);

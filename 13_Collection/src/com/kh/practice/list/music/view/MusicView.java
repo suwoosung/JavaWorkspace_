@@ -25,6 +25,7 @@ public class MusicView {
 			System.out.println("9. 종료");
 			System.out.print("메뉴 번호 선택 : ");
 			int menu = sc.nextInt();
+			sc.nextLine();
 
 			switch (menu) {
 			case 1:

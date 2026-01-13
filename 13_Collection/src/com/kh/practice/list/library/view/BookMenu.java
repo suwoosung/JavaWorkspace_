@@ -60,7 +60,7 @@ public class BookMenu {
 		System.out.print("장르(1. 인문 / 2. 과학 / 3. 외국어 / 4. 기타) : ");
 		int category = sc.nextInt();
 
-		System.out.println("가격 : ");
+		System.out.print("가격 : ");
 		int price = sc.nextInt();
 		
 		String[] str = {"인문","자연과학","의료","기타"};
