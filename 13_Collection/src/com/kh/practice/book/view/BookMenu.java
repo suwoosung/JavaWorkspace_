@@ -27,6 +27,7 @@ public class BookMenu {
 			System.out.println("9. 프로그램 끝내기");
 			System.out.print("메뉴 번호 : ");
 			int menu = sc.nextInt();
+			sc.nextLine();
 
 			switch (menu) {
 			case 1:
@@ -45,21 +46,17 @@ public class BookMenu {
 	}
 
 	public void fileSave() {
-		sc.nextLine();
-
 		System.out.print("도서 명 : ");
 		String title = sc.nextLine();
 
 		System.out.print("저자 명 : ");
 		String author = sc.nextLine();
 
-		System.out.print("도서 가격 : ");
-		int price = sc.nextInt();
-
-		sc.nextLine();
-
 		System.out.print("출판 날짜(yyyy-mm-dd) : ");
 		String date = sc.nextLine();
+		
+		System.out.print("도서 가격 : ");
+		int price = sc.nextInt();
 
 		System.out.print("할인율 : ");
 		double discount = sc.nextDouble();

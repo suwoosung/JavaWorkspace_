@@ -33,7 +33,7 @@ public class PropertiesRun {
 		// - key에 저장된 value값을 가져오는 메서드
 		System.out.println(prop.getProperty("Set"));
 		
-		// 3. stor(OutputStream os, String Comments)
+		// 3. store(OutputStream os, String Comments)
 		//  - prop에 담긴 key,value를 모두 출력스트림을 황용하여 출력하는 메서드
 		
 		try {
