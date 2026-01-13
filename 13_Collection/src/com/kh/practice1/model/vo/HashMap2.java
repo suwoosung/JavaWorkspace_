@@ -71,7 +71,21 @@ public class HashMap2 {
 	}
 	
 	public boolean containsKey(String key) {
-		return get(key) != null;
+		int index = getIndex(key);
+	    Entry curr = table[index];
+
+	    if (curr == null) {
+	        return false;
+	    }
+
+	    while (curr != null) {
+	        if (curr.key.equals(key)) {
+	            return true; // 일치하는 키 발견
+	        }
+	        curr = curr.next; // 다음 노드로 이동
+	    }
+
+	    return false;
 	}
 	
 	public void remove(String key) {
