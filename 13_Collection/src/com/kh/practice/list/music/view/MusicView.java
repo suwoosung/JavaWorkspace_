@@ -61,7 +61,7 @@ public class MusicView {
 
 	public void addList() {
 		System.out.println("****** 마지막 위치에 곡 추가 ******");
-		sc.nextLine();
+		
 		System.out.print("곡 명 : ");
 		String title = sc.nextLine();
 
@@ -79,7 +79,7 @@ public class MusicView {
 
 	public void addAtZero() {
 		System.out.println("****** 첫 위치에 곡 추가 ******");
-		sc.nextLine();
+		
 		System.out.print("곡 명 : ");
 		String title = sc.nextLine();
 
@@ -103,7 +103,7 @@ public class MusicView {
 
 	public void searchMusic() {
 		System.out.println("****** 특정 곡 목록 출력 ******");
-		sc.nextLine();
+		
 		System.out.print("검색할 곡 이름 : ");
 		String title = sc.nextLine();
 		Music m = mc.searchMusic(title);
@@ -117,7 +117,7 @@ public class MusicView {
 
 	public void removeMusic() {
 		System.out.println("****** 특정 곡 삭제 ******");
-		sc.nextLine();
+		
 		System.out.print("삭제할 곡 이름 : ");
 		String title = sc.nextLine();
 		
@@ -132,7 +132,7 @@ public class MusicView {
 
 	public void setMusic() {
 		System.out.println("****** 특정 곡 수정 ******");
-		sc.nextLine();
+		
 		System.out.print("검색할 곡 이름 : ");
 		String searchTitle = sc.nextLine();
 
