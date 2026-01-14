@@ -52,7 +52,6 @@ public class HashMapRun<K, V> {
 			} else {
 				// 2. key은 다르지만 hash값이 우연히 일치한 경우
 				// table[index] = new Entry<>(key,value,null);
-
 				Entry<K, V> next = table[index];
 				while (true) {
 
