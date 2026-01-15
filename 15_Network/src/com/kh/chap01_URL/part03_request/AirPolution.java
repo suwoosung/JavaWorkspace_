@@ -27,7 +27,6 @@ public class AirPolution {
 		 *    응답(response)을 돌려준다. 
 		 *    - 단, API서버 요청시에는 해당 API서버가 정한 규칙(interface)에 맞춰 요청을 보내야한다.
 		 *  
-		 *  
 		 * 2. API 서버 요청 방식(Http Method) 
 		 *    - API서버에서 지정한 규칙에 따라야 하며, 전통적인 방식의 API요청방법은 2가지가 있다.
 		 *  
@@ -38,7 +37,6 @@ public class AirPolution {
 		 *    2) Post방식 - 요청변수를
 		 *    HTTP바디에 담아서 요청하는 방식 - 주로 데이터를 생성, 수정, 삭제할때 사용한다 - EX)
 		 *    https://khedu.co.kr/data (쿼리스트링은 url에 노출되지 않는다)
-		 * 
 		 * 
 		 * 3. API응답데이터 형식 및 처리방법 
 		 *   1) XML유형의 데이터 
