@@ -15,8 +15,9 @@ public class AirPolution {
 
 	public static void main(String[] args) {
 		/*
+		 * 1) API서버로 데이터 요청(request)
+		 * 
 		 * 1. API(Application Programming Interface)
-		 *    1) API서버로 데이터 요청(request)
 		 *    - 애플리케이션간에 상호작용을 위한 인터페이스 
 		 *    - 자바 api : 자바 어플리케이션 개발에 도움을 주는 클래스 
 		 *    - API 서버 
