@@ -25,7 +25,7 @@ public class Run {
 	 */
 
 	public static void main(String[] args) {
-		// 1) 서버 소켓읠 포트번호 지정
+		// 1) 서버 소켓의 포트번호 지정
 		// - 0 ~ 1023 : 시스템 포트번호 사용 불가
 		// - 1024 ~ 65535요 사이의 포트번호 사용
 		int port = 30000;
