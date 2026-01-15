@@ -1,8 +1,9 @@
 package com.kh.practice.thread;
 
 import java.awt.desktop.ScreenSleepEvent;
+import java.util.Random;
 
-public class Provider implements Runnable {
+public class Provider extends Thread {
 
 	private Data data;
 
@@ -10,12 +11,14 @@ public class Provider implements Runnable {
 		this.data = data;
 	}
 
+	@Override
 	public void run() {
 		for (int i = 0; i < 10; i++) {
-			int random = (int)(Math.random() * 100 + 1);
+			int random = new Random().nextInt(100)+1;
 			data.setValue(random);
+			
 			try {
-				Thread.sleep((long) 0.1);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

@@ -3,13 +3,14 @@ package com.kh.practice.thread;
 public class MultiThreadTest {
 
 	public static void main(String[] args) {
+		 
+		Data data = new Data(); // 공유데이터
 		
-		Data data = new Data();
+		Thread putThread = new Provider(data);
+		Thread getThread = new Customer(data);
 		
-		Thread provider = new Thread(new Provider(data));
-		Thread customer = new Thread(new Customer(data));
-		
-		provider.start();
-		customer.start();
+		// 쓰레드 구동
+		putThread.start();
+		getThread.start();
 	}
 }
