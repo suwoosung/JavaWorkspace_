@@ -41,7 +41,7 @@ public class ScoreMenu {
 	public void saveScore() {
 		int num = 0;
 		while (true) {
-			System.out.println(++num + "번째 학생 정보 기록");
+			System.out.println((++num) + "번째 학생 정보 기록");
 
 			System.out.print("이름 : ");
 			String name = sc.next();
