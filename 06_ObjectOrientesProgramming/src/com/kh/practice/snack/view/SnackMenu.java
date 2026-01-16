@@ -28,7 +28,7 @@ public class SnackMenu {
 		int price = sc.nextInt();
 		
 		System.out.print(scr.saveData(kind, name, flavor, numOf, price));
-		// 저장기능 필요
+		// 저장기능 필요함
 		
 		System.out.print("저장한 정보를 확인하시겠습니까?(y/n) : ");
 		char ch = sc.next().charAt(0);
