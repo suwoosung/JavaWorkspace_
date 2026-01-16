@@ -14,7 +14,7 @@ public class MethodTest1 {
 		// return;
 	}
 
-	// 2 . 매개변수 x, 반환형 o
+	// 2 . 매개변수 x , 반환형 o
 	public int method2() {
 		System.out.println("매개변수 x, 반환값 o");
 		int random = (int) (Math.random() * 100 + 1);
@@ -22,7 +22,7 @@ public class MethodTest1 {
 		return random;
 	}
 
-	// 3. 매개변수 o, 반환형 x
+	// 3. 매개변수 o , 반환형 x
 	public void method3(int x, int y) {
 		int min = 0;
 		int max = 0;
