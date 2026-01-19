@@ -107,7 +107,7 @@ public class StreamPractice {
 			System.out.println(result);
 		// abcdefg
 
-		// 6. slist에서 학생의 이름과 나이를 학생이름기 오름차순 정렬하여 출력.
+		// 6. slist에서 학생의 이름과 나이를 학생이름기준 오름차순 정렬하여 출력.
 			slist
 			.stream()
 		    .sorted(Comparator.comparing(Student::getName)) // 이름 기준 정렬
