@@ -12,14 +12,15 @@ public class LamdaPractice3 {
 		
 		
 		MyFunction<String, String> third = v -> {
-			String[] arr = v.split("");
-			StringBuilder sb = new StringBuilder();
-			for(String s : arr) {
-				sb.append(s).append("-");
-			}
-			sb.deleteCharAt(sb.length()-1);
-			
-			return sb.toString();
+//			String[] arr = v.split("");
+//			StringBuilder sb = new StringBuilder();
+//			for(String s : arr) {
+//				sb.append(s).append("-");
+//			}
+//			sb.deleteCharAt(sb.length()-1);
+//			
+//			return sb.toString();
+			return String.join("-", v.split(""));
 		};
 		System.out.println(third.apply("lambda"));
 	}

@@ -37,7 +37,7 @@ public class StreamMethods {
 		 *    Calculating계열에서 제공하지 않는 연산기능을 수행할 때 사용한다.
 		 */
 		
-		// 중간처리 메서드(distinct, filter, forEach)
+		// 1) 중간처리 메서드(distinct, filter, forEach)
 		List<Integer> list = Arrays.asList(5,1,2,3,3,2,4,3,2,1,4,2,5);
 		
 		Stream<Integer> stream = list.stream();

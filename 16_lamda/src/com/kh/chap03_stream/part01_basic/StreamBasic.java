@@ -52,16 +52,17 @@ public class StreamBasic {
 		
 		String[] sArr = {"아자스","야르","무지컬"};
 		Stream<String> stream = Arrays.stream(sArr);
+		//intStream.forEach(s -> System.out.print(s+" "));
 		
 		// 2. 컬렉션
 		ArrayList<Integer> list = new ArrayList<>();
 		Stream<Integer> arrayStream = list.stream(); // list를 Stream으로 변환
 		
 		Set<Integer> set = new HashSet<>();
-		Stream<Integer> setStream = set.stream();
+		Stream<Integer> setStream = set.stream(); // set을 Stream으로 변환
 		
 		HashMap<String, Integer> map = new HashMap<>();
-		Stream<String> mapStream = map.keySet().stream();
+		Stream<String> mapStream = map.keySet().stream(); // map을 Stream으로 변환
 		
 		// 3. Stream클래스를 통한 스트림 생성
 		Stream<String> empty = Stream.empty();
