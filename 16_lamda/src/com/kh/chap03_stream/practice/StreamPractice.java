@@ -77,7 +77,7 @@ public class StreamPractice {
 				.stream()
 				.distinct()
 				.filter(num -> num>=5 && num%2==1)
-				.sorted()
+				.sorted(Integer::compareTo)
 				.forEach(num -> System.out.print(num+" "));
 			System.out.println();
 		// 결과 : 9 11
@@ -86,7 +86,7 @@ public class StreamPractice {
 				list
 				.stream()
 				.map(num -> num * 3) // 값을 변환할 때는 map 사용
-				.sorted()
+				.sorted(Integer::compareTo)
 				.forEach(n -> System.out.print(n + " "));
 			System.out.println();
 		// 3 6 9 9 12 12 18 27 30 33
@@ -100,27 +100,29 @@ public class StreamPractice {
 		// [A, A, B, B, C, C, D, E, F, G]
 
 		// 5. strlist에서 중복값을 제거후 각 문자를 하나의 문자열로 합쳐서 반환해주는 프로그램
-			String result = strlist
+			String str = strlist
 					.stream()
 				    .distinct()
-				    .collect(Collectors.joining()); // 문자열을 이어붙이는 최종 연산
-			System.out.println(result);
+				    //.collect(Collectors.joining());
+				    .reduce("",(result, str1) -> result+str1);
+			System.out.println(str);
 		// abcdefg
 
 		// 6. slist에서 학생의 이름과 나이를 학생이름기준 오름차순 정렬하여 출력.
 			slist
 			.stream()
-		    .sorted(Comparator.comparing(Student::getName)) // 이름 기준 정렬
+		    .sorted((s1, s2) -> s1.name.compareTo(s2.name)) 
 		    .forEach(s -> System.out.print(s.getName() + " : " + s.getAge() + " "));
+			System.out.println();
 		// 이름: 나이
 		// 강감찬 : 16 김말똥 : 29 아무개 : 23 이순신 : 25 홍길동 : 15
 
 		// 7. slist에서 20살 이상인 학생의 평균점수를 구하는 프로그램
 			double score = slist.stream()
-				    .filter(s -> s.getAge() >= 20)
-				    .mapToInt(Student::getScore) // 평균을 구하려면 수치형 스트림으로 변환 필요
+				    .filter(s -> s.age >= 20)
+				    .mapToInt(s -> s.score) // 평균을 구하려면 수치형 스트림으로 변환 필요
 				    .average() // 평균계산
-				    .orElse(0.0);
+				    .orElse(0);
 			System.out.println(score);
 		// 80.0
 //	      System.out.println(score);
